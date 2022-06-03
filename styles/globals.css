@@ -28,11 +28,11 @@ nav {
   height: -moz-fit-content;
   height: fit-content;
   display: inline-flex;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(202, 101, 5, 0.932);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   align-items: center;
-  padding: 0 10px;
+  padding: 5px 10px;
   margin: 50px auto;
   box-shadow: 0px 3px 20px 0px rgba(47, 47, 47, 0.5);
 }
@@ -55,7 +55,7 @@ nav {
   width: 100%;
   z-index: -1;
   transition: 0.2s;
-  border-radius: 15px;
+  border-radius: 25px;
 }
 .menu-bar li:hover {
   color: black;
@@ -63,7 +63,7 @@ nav {
 .menu-bar li:hover::before {
   background-color: #fff;
   color: #777;
-  box-shadow: 0px 3px 20px 0px rgb(47, 47, 47);
+  box-shadow: 0px 3px 20px 0px rgb(5, 5, 5);
   /* transform: scale(1.2); */
 }
 
@@ -163,10 +163,50 @@ body {
   transition: 0.2s all;
 }
 
+.productdetails {
+  margin-left: 45%;
+}
+.productdetails a {
+  font-family: "Maven Pro", sans-serif;
+  font-size: 14px;
+  text-decoration: none;
+  text-transform: uppercase;
+  background: #189cf0;
+  display: inline-block;
+  padding: 8px 25px;
+  border: 2px solid transparent;
+  border-radius: 40px;
+  color: #fff;
+  font-weight: 400;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+.productdetails a:hover{
+  background-color: rgb(252, 103, 4);
+  border-color:  rgb(252, 103, 4);
+  color: #fbfcfd;
+  cursor: pointer;
+}
+.group{
+  text-align: left;
+  font-weight: bold;
+  font-size: 20px;
+}
+.card-body{
+  justify-items: center;
+}
+.form-control{
+  border-radius: 25px;
+  padding: 10px 10px 10px 10px;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
 .notfound a:hover {
-  background-color: #fff;
-  border-color: #189cf0;
-  color: #189cf0;
+  background-color: rgb(255, 255, 255);
+  border-color:  rgb(32, 73, 161);
+  color: #000000;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 480px) {

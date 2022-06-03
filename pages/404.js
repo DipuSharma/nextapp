@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import Link from "next/link";
+import Navbar from "../components/Navbar";
 import { useRouter } from "next/router";
 
 const Errorpage = () => {
@@ -17,35 +17,7 @@ const Errorpage = () => {
 
   return (
     <>
-      <nav>
-        <ul className="menu-bar">
-          <li>
-            <Link href="/">
-              <a> Home </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/about">
-              <a> About </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/contact">
-              <a> Contact </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/blog">
-              <a> Blog </a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/product">
-              <a> Product </a>
-            </Link>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
       <div id="notfound">
         <div className="notfound">
           <div className="notfound-404">
