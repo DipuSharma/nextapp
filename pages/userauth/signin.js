@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import React, { useState } from 'react';
 import { useRouter } from "next/router";
-import {setUserSession} from '../../utils/common';
+import { setUserSession } from '../../utils/common';
 
 const Signin = () => {
   const [user_type, setType] = useState();
@@ -19,34 +19,34 @@ const Signin = () => {
 
     e.preventDefault();
     console.warn({ user_type, email, password })
-        let data = ({ user_type, email, password })
-        if(data){
-            fetch('http://127.0.0.1:8000/login', {
-            method:'POST',
-            headers:{
-                'accept':'application/json',
-                'content-type':'application/json',
-            },
-            body:JSON.stringify(data)
-        }).then((result)=>{
-            result.json().then((response)=>{
-              setLoading(false);
-              if(response.detail){
-                  alert(response.detail);
-                  router.push('/userauth/signin');
-              }
-              else{
-                  setUserSession(response.token, response.user);
-                  router.push('/userauth/profile');
-              }
-            })
+    let data = ({ user_type, email, password })
+    if (data) {
+      fetch('http://127.0.0.1:8000/login', {
+        method: 'POST',
+        headers: {
+          'accept': 'application/json',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(data)
+      }).then((result) => {
+        result.json().then((response) => {
+          setLoading(false);
+          if (response.detail) {
+            alert(response.detail);
+            router.push('/userauth/signin');
+          }
+          else {
+            setUserSession(response.token, response.user);
+            router.push('/userauth/profile');
+          }
         })
-        }else{
-          console.log("Data not found");
-        }
+      })
+    } else {
+      console.log("Data not found");
+    }
   }
-  if(loading){
-    <h1 style={{textAlign: "center" }}>Please Wait....</h1>
+  if (loading) {
+    <h1 style={{ textAlign: "center" }}>Please Wait....</h1>
   }
   return (
     <>
@@ -59,17 +59,17 @@ const Signin = () => {
               <div className="form-row">
                 <div className="form-group col">
                   <label>User Type</label>
-                  <input name="usertype" type="text" className={`form-control `} onChange={(e)=>{setType(e.target.value)}}/>
+                  <input name="usertype" type="text" className={`form-control `} onChange={(e) => { setType(e.target.value) }} />
                   {/* <div className="invalid-feedback">{errors.lastName?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Username</label>
-                  <input name="username" type="email" className={`form-control `} onChange={(e)=>{setEmail(e.target.value)}}/>
+                  <input name="username" type="email" className={`form-control `} onChange={(e) => { setEmail(e.target.value) }} />
                   {/* <div className="invalid-feedback">{errors.email?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label> Password </label>
-                  <input name="password" type="password" className={`form-control`} onChange={(e)=>{setPassword(e.target.value)}} />
+                  <input name="password" type="password" className={`form-control`} onChange={(e) => { setPassword(e.target.value) }} />
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">

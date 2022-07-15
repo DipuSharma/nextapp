@@ -4,10 +4,11 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import { getToken } from "../../utils/common";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   // const token = getToken()
-  const res = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=10")
+  const res = await fetch("http://localhost:8000/product/all")
   const data = await res.json()
+  console.log(data);
 
   return {
     props: {
@@ -16,7 +17,7 @@ export async function getStaticProps() {
   };
 };
 
-const Product = ({ data }) => {
+function Product({ data }) {
   return (
     <>
       <Head>
@@ -26,14 +27,14 @@ const Product = ({ data }) => {
       <h1 style={{ textAlign: "center" }}>Hello World my Product </h1>
       <div className="container">
         <div className="col-md-8">
-          {data.map((post, i) => {
+          {data.data.map((item) => {
             return (
-              <div key={i}>
-                <h3 style={{ textAlign: "center" }}>{post.title}</h3>
-                <p style={{ textAlign: "center" }}>{post.body}</p>
+              <div key={item.id}>
+                <h3 style={{ textAlign: "center" }}>{item.product_name}</h3>
+                <p style={{ textAlign: "center" }}>{item.category}</p>
                 <div className="productdetails">
-                  <Link  href={`/product/${post.id}`}>
-                    <a>{post.id}</a>
+                  <Link  href={`/product/${item.id}`}>
+                    <a>{item.id}</a>
                   </Link>
                 </div>
               </div>

@@ -21,8 +21,9 @@ export const getStaticPaths = async () => {
 
 export const getStaticProps = async (context) => {
     const id = context.params.id;
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+    const res = await fetch(`http://localhost:8000/product?id=${id}`);
     const data = await res.json();
+    console.log(data);
 
     return {
         props: {
@@ -39,9 +40,9 @@ const DynamicPage = ({ data }) => {
             </Head>
             <Navbar />
             <h1 style={{ textAlign: "center" }}>Product Details Page</h1>
-            <h4 style={{ textAlign: "center" }}>{data.id}</h4>
-            <h2 style={{ textAlign: "center" }}>{data.title}</h2>
-            <h4 style={{ textAlign: "center" }}>{data.body}</h4>
+            <h4 style={{ textAlign: "center" }}>{data.data.id}</h4>
+            <h2 style={{ textAlign: "center" }}>{data.data.product_name}</h2>
+            <h4 style={{ textAlign: "center" }}>{data.data.category}</h4>
         </>
     )
 }

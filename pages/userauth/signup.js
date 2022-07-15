@@ -1,6 +1,7 @@
 import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import React, { useState } from 'react';
+import { useRouter } from "next/router";
 
 const Signup = () => {
   const [user_type, setType] = useState();
@@ -8,16 +9,11 @@ const Signup = () => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirm_password, setCpassword] = useState();
-  if(!user_type){
-    console.log("Please enter usertype");
-  }
-  if(!password === confirm_password){
-    console.log("Password Mismatch");
-  }
+  const router = useRouter();
 
   const submit = async (e) => {
     e.preventDefault();
-    console.warn({ user_type,name, email, password})
+    // console.warn({ user_type,name, email, password, confirm_password})
         let data = ({ user_type, name, email, password, confirm_password})
         if(data){
             fetch('http://127.0.0.1:8000/registration', {
@@ -35,6 +31,9 @@ const Signup = () => {
         }else{
           console.log("Data not found");
         }
+  }
+  const handleReset = () =>{
+    router.push('/userauth/signup');
   }
   return (
     <>
@@ -70,15 +69,15 @@ const Signup = () => {
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group col">
-                  <label>Password</label>
+                  <label>Confirm Password</label>
                   <input name="confirmpassword" type="password" className={`form-control`} onChange={(e)=>{setCpassword(e.target.value)}}/>
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">
                   <button type="submit" className="btn btn-primary mr-2">
-                    Save
+                    Signup
                   </button>
-                  <button type="button" className="btn btn-secondary">Reset</button>
+                  <button type="button" onClick={handleReset} className="btn btn-secondary">Reset</button>
                   {/* <Link href="/users" className="btn btn-link"><a>Cancel</a></Link> */}
                 </div>
               </form>

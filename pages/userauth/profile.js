@@ -1,10 +1,12 @@
 import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
+import { useRouter } from "next/router";
 import { getUser, getToken } from '../../utils/common';
 
 const Profile = () => {
   const Title = "Profile"
+  const router = useRouter()
   const user = getUser()
   const token = getToken()
   const [posts, setPosts] = useState([])
@@ -29,9 +31,15 @@ const Profile = () => {
         }).finally(() => {
           setLoading(false);
         });
-    }, 3000);
+    }, 1000);
   }, []);
-
+  if (!user) {
+    useEffect(() => {
+      setTimeout(() => {
+        router.push("/userauth/signin");
+      }, 3000);
+    }, []);
+  }
   if (loading) {
     return <h1 style={{ textAlign: "center" }}>Data is loading...</h1>;
   }
