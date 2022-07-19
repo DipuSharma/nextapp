@@ -50,30 +50,38 @@ const Navbar = () => {
         <title>{Title} Page</title>
       </Head>
       <Fragment>
-        <nav>
-          <ul className="menu-bar">
-            <li>
-              <Link href="/">
-                <a> Home </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/about">
-                <a> About </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact">
-                <a> Contact </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/product">
-                <a> Product </a>
-              </Link>
-            </li>
-            {user ? authLinks : guestLinks}
-          </ul>
+        <nav className="navbar navbar-expand-lg navbar-light bg-danger">
+          <div className="container-fluid">
+            <a className="navbar-brand" href="#">Navbar</a>
+            <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <ul className="navbar-nav">
+                  <li>
+                    <Link href="/">
+                      <a> Home </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/about">
+                      <a> About </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/contact">
+                      <a> Contact </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/product">
+                      <a> Product </a>
+                    </Link>
+                  </li>
+                  {user ? authLinks : guestLinks}
+                </ul>
+            </div>
+          </div>
         </nav>
       </Fragment>
     </>

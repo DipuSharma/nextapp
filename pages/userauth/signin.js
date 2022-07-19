@@ -1,13 +1,15 @@
 import Navbar from "../../components/Navbar";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { setUserSession } from '../../utils/common';
+import { getUser, getToken } from '../../utils/common';
 
 const Signin = () => {
   const [user_type, setType] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [loading, setLoading] = useState();
+  const user = getUser;
   const router = useRouter();
 
   const handleReset = () => {
@@ -18,9 +20,17 @@ const Signin = () => {
   const submit = async (e) => {
 
     e.preventDefault();
-    console.warn({ user_type, email, password })
     let data = ({ user_type, email, password })
-    if (data) {
+    if(!user_type){
+      alert("Please choose your user type")
+    }
+    if(!email){
+      alert("Please type your email id")
+    }
+    if(!password){
+      alert("Please type your password")
+    }
+    else{
       fetch('http://127.0.0.1:8000/login', {
         method: 'POST',
         headers: {
@@ -41,12 +51,10 @@ const Signin = () => {
           }
         })
       })
-    } else {
-      console.log("Data not found");
     }
   }
   if (loading) {
-    <h1 style={{ textAlign: "center" }}>Please Wait....</h1>
+    <h1 style={{ textAlign: "center" }}>   Please Wait....    </h1>
   }
   return (
     <>
@@ -55,21 +63,22 @@ const Signin = () => {
         <div className="row">
           <div className="col-md-4"></div>
           <div className="col-md-4">
+            <div className="login-card">
             <form onSubmit={submit}>
               <div className="form-row">
                 <div className="form-group col">
                   <label>User Type</label>
-                  <input name="usertype" type="text" className={`form-control `} onChange={(e) => { setType(e.target.value) }} />
+                  <input name="usertype" type="text" id="usertype" className={`form-control `} onChange={(e) => { setType(e.target.value) }} />
                   {/* <div className="invalid-feedback">{errors.lastName?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Username</label>
-                  <input name="username" type="email" className={`form-control `} onChange={(e) => { setEmail(e.target.value) }} />
+                  <input name="username" type="email" id="email" className={`form-control `} onChange={(e) => { setEmail(e.target.value) }} />
                   {/* <div className="invalid-feedback">{errors.email?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label> Password </label>
-                  <input name="password" type="password" className={`form-control`} onChange={(e) => { setPassword(e.target.value) }} />
+                  <input name="password" type="password" id="password" className={`form-control`} onChange={(e) => { setPassword(e.target.value) }} />
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">
@@ -79,6 +88,7 @@ const Signin = () => {
                 </div>
               </div>
             </form>
+            </div>
           </div>
           <div className="col-md-4"></div>
         </div>
