@@ -50,7 +50,7 @@ const Navbar = () => {
         <title>{Title} Page</title>
       </Head>
       <Fragment>
-        <nav className="navbar navbar-expand-lg navbar-light bg-danger">
+        <nav className="navbar navbar-expand-lg navbar-light bg-primary">
           <div className="container-fluid">
             <a className="navbar-brand" href="#">Navbar</a>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,6 +76,11 @@ const Navbar = () => {
                   <li>
                     <Link href="/product">
                       <a> Product </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/verify-email">
+                      <a></a>
                     </Link>
                   </li>
                   {user ? authLinks : guestLinks}

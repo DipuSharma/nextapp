@@ -76,6 +76,8 @@ a {
   margin: 20px;
 }
 
+
+
 /* Signup Form */
 .signup-page{
   margin-top: 100px;
@@ -326,4 +328,10 @@ body {
 }
 .product-details p, h1, h2, h3, h4{
   text-align: center;
+}
+
+.product-details .product-details-button a{
+  margin-left: 20px;
+  flex-direction: row;
+  padding: 5px 25px;
 }
