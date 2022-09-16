@@ -2,6 +2,7 @@ import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import React, { useState } from 'react';
 import { useRouter } from "next/router";
+import { setRegistrationSession } from '../../utils/common';
 
 const Signup = () => {
   const [user_type, setType] = useState();
@@ -25,11 +26,13 @@ const Signup = () => {
         body: JSON.stringify(data)
       }).then((result) => {
         result.json().then((response) => {
-          console.log("response", response)
+          console.log("response", response.data)
+          setRegistrationSession(response.data);
         })
       })
     } else {
       console.log("Data not found");
+      router.push('/userauth/signup');
     }
   }
   const handleReset = () => {
@@ -43,12 +46,12 @@ const Signup = () => {
       <Navbar />
       
       <div className="container signup-page">
-      <h1 style={{ textAlign: "center" }}>My Signup Page</h1>
         <div className="row">
           <div className="col-md-4"></div>
           <div className="col-md-4">
             <main className="form-signup">
               <form onSubmit={submit}>
+                <h4>SignUp</h4>
                 <div className="form-group col">
                   <label>User Type</label>
                   <input name="usertype" type="text" className={`form-control `} onChange={(e) => { setType(e.target.value) }} />

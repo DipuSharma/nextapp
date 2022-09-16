@@ -20,9 +20,28 @@ export const getToken = () => {
 
 }
 
+export const getRegiToken = () => {
+    if (typeof window !== 'undefined') {
+        const token = sessionStorage.getItem('data')
+        console.log(token);
+        if (token) return token;
+        if (token === 'undefined') return 'undefined';
+        else return null
+    }
+}
+
+
 export const setUserSession = (token, user) => {
     sessionStorage.setItem("token", token);
     sessionStorage.setItem("user", user);
+}
+
+export const setRegistrationSession = (data) => {
+    sessionStorage.setItem("data", data);
+}
+
+export const removeRegistrationSession = () => {
+    sessionStorage.removeItem("data")
 }
 
 export const removeUserSession = () => {

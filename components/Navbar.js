@@ -17,12 +17,12 @@ const Navbar = () => {
   }
   const guestLinks = (
     <Fragment>
-      <li>
+      <li className="loginsignup">
         <Link href='/userauth/signin'>
           <a>Login</a>
         </Link>
       </li>
-      <li>
+      <li className="loginsignup">
         <Link href='/userauth/signup'>
           <a>Register</a>
         </Link>
@@ -78,8 +78,8 @@ const Navbar = () => {
                       <a> Product </a>
                     </Link>
                   </li>
-                  <li>
-                    <Link href="/verify-email">
+                  <li className="verifyemail">
+                    <Link href="/verification">
                       <a></a>
                     </Link>
                   </li>

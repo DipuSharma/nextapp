@@ -52,27 +52,31 @@ const Profile = () => {
       <div className="container">
         <div className="row">
           <h1 style={{ textAlign: "center" }}>Hello World my Profile {user}</h1>
-          {posts.address?.map(
-            (element) => {
-              if (element.lenght === 0) {
+          <div className="col-md-4" style={{ textAlign: "center" , justifyContent:"center"}}>
+            {posts.address?.map(
+              (element) => {
+                if (element.lenght === 0) {
+                  return (
+                    <div className="details">{element.lenght}</div>
+                  )
+                }
                 return (
-                  <div className="details">{element.lenght}</div>
+                  <div className='details' key={element.id} style={{ textAlign: "center" }}>
+                    <p>Address  1 : {element.address_line_1}</p>
+                    <p>Address  2 : {element.address_line_2}</p>
+                    <p>Zipcode    :{element.zipcode}</p>
+                    <p>Country Code : {element.country_name}</p>
+                    <p>State Code   : {element.state}</p>
+                    <p>District   : {element.district}</p>
+                    <p>Mobile No. : {element.mobile_number}</p>
+                  </div>
+
                 )
               }
-              return (
-                <div className='details' key={element.id} style={{ textAlign: "center" }}>
-                  <p>Address  1 : {element.address_line_1}</p>
-                  <p>Address  2 : {element.address_line_2}</p>
-                  <p>Zipcode    :{element.zipcode}</p>
-                  <p>Country Code : {element.country_name}</p>
-                  <p>State Code   : {element.state}</p>
-                  <p>District   : {element.district}</p>
-                  <p>Mobile No. : {element.mobile_number}</p>
-                </div>
-
-              )
-            }
-          )}
+            )}
+          </div>
+          <div className="col-md-4">2</div>
+          <div className="col-md-4">3</div>
         </div>
       </div>
     </>
