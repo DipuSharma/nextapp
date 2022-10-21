@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import { getUser, getToken } from '../../utils/common';
+import { getUser, getToken, removeUserSession, removeRegistrationSession } from '../../utils/common';
 
 const Profile = () => {
   const Title = "Profile"
@@ -31,12 +31,22 @@ const Profile = () => {
           setLoading(false);
         });
     }, 1000);
+
+    setTimeout(() => {
+      if (token) {
+        removeUserSession();
+        removeRegistrationSession();
+        alert("Your are not authenticated.")
+        router.push('/userauth/signin')
+      }
+    }, 60000);
   }, []);
   if (!user) {
     useEffect(() => {
       setTimeout(() => {
+        alert("Your are not authenticated.")
         router.push("/userauth/signin");
-      }, 3000);
+      }, 2000);
     }, []);
   }
   if (loading) {
@@ -52,7 +62,8 @@ const Profile = () => {
       <div className="container">
         <div className="row">
           <h1 style={{ textAlign: "center" }}>Hello World my Profile {user}</h1>
-          <div className="col-md-4" style={{ textAlign: "center" , justifyContent:"center"}}>
+          <a style={{textAlign:"center"}} href="http://localhost:3000/userauth/address">Add Address</a>
+          <div className="col-md-4" style={{ textAlign: "center", justifyContent: "center" }}>
             {posts.address?.map(
               (element) => {
                 if (element.lenght === 0) {

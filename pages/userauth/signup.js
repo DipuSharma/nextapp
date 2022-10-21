@@ -16,7 +16,7 @@ const Signup = () => {
     e.preventDefault();
     // console.warn({ user_type,name, email, password, confirm_password})
     let data = ({ user_type, name, email, password, confirm_password })
-    if (data) {
+    if (password === confirm_password) {
       fetch('http://127.0.0.1:8000/registration', {
         method: 'POST',
         headers: {
@@ -26,12 +26,13 @@ const Signup = () => {
         body: JSON.stringify(data)
       }).then((result) => {
         result.json().then((response) => {
-          console.log("response", response.data)
           setRegistrationSession(response.data);
+          alert(response.message);
+          router.push('/userauth/signin');
         })
       })
     } else {
-      console.log("Data not found");
+      console.log("Password not match");
       router.push('/userauth/signup');
     }
   }
@@ -54,27 +55,27 @@ const Signup = () => {
                 <h4>SignUp</h4>
                 <div className="form-group col">
                   <label>User Type</label>
-                  <input name="usertype" type="text" className={`form-control `} onChange={(e) => { setType(e.target.value) }} />
+                  <input name="usertype" type="text" className={`form-control `} onChange={(e) => { setType(e.target.value) }} required/>
                   {/* <div className="invalid-feedback">{errors.lastName?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>First Name</label>
-                  <input name="firstName" type="text" className={`form-control`} onChange={(e) => { setName(e.target.value) }} />
+                  <input name="firstName" type="text" className={`form-control`} onChange={(e) => { setName(e.target.value) }} required/>
                   {/* <div className="invalid-feedback">{errors.firstName?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Email Id</label>
-                  <input name="email" type="email" className={`form-control `} onChange={(e) => { setEmail(e.target.value) }} />
+                  <input name="email" type="email" className={`form-control `} onChange={(e) => { setEmail(e.target.value) }} required/>
                   {/* <div className="invalid-feedback">{errors.email?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Password</label>
-                  <input name="password" type="password" className={`form-control`} onChange={(e) => { setPassword(e.target.value) }} />
+                  <input name="password" type="password" className={`form-control`} onChange={(e) => { setPassword(e.target.value) }} required/>
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Confirm Password</label>
-                  <input name="confirmpassword" type="password" className={`form-control`} onChange={(e) => { setCpassword(e.target.value) }} />
+                  <input name="confirmpassword" type="password" className={`form-control`} onChange={(e) => { setCpassword(e.target.value) }} required/>
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">

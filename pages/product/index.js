@@ -2,19 +2,43 @@ import Navbar from "../../components/Navbar";
 import Head from "next/head";
 import Link from "next/link";
 import Image from "next/image";
-export async function getServerSideProps() {
-  // const token = getToken()
-  const res = await fetch("http://localhost:8000/product/all")
-  const data = await res.json()
+import { useRouter } from "next/router";
+import React, { useState, useEffect } from "react";
 
-  return {
-    props: {
-      data,
-    },
-  };
-};
 
-export const Product = ({ data }) => {
+const Product = () => {
+  const[data, setData] = useState();
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      fetch("http://localhost:8000/product/all", {
+        method: "GET",
+      })
+        .then((result) => {
+          result.json().then((response) => {
+            if (response) {
+              console.log(response.data);
+              setData(response.data)
+            }
+          })
+        }).catch((err) => {
+          console.log(err);
+          router.push('/userauth/profile');
+        }).finally(() => {
+          setLoading(false);
+        });
+    }, 2000);
+  }, []);
+
+  if(!data){
+    console.log("Product record not found");
+    router.push('/userauth/profile');
+  }
+
+
   return (
     <>
       <Head>

@@ -22,6 +22,16 @@ const Navbar = () => {
           <a>Login</a>
         </Link>
       </li>
+      <li className="verifyemail">
+        <Link href="/userauth/verification">
+          <a></a>
+        </Link>
+      </li>
+      <li className="verifyemail">
+        <Link href={`/userauth/verification?token=${token}`}>
+          <a></a>
+        </Link>
+      </li>
       <li className="loginsignup">
         <Link href='/userauth/signup'>
           <a>Register</a>
@@ -35,6 +45,11 @@ const Navbar = () => {
       <li>
         <Link href='/userauth/profile'>
           <a>Profile</a>
+        </Link>
+      </li>
+      <li className="verifyemail">
+        <Link href='/userauth/address'>
+          <a></a>
         </Link>
       </li>
       <li onClick={handleLogout}>
@@ -57,34 +72,29 @@ const Navbar = () => {
               <span className="navbar-toggler-icon"></span>
             </button>
             <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <ul className="navbar-nav">
-                  <li>
-                    <Link href="/">
-                      <a> Home </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/about">
-                      <a> About </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/contact">
-                      <a> Contact </a>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link href="/product">
-                      <a> Product </a>
-                    </Link>
-                  </li>
-                  <li className="verifyemail">
-                    <Link href="/verification">
-                      <a></a>
-                    </Link>
-                  </li>
-                  {user ? authLinks : guestLinks}
-                </ul>
+              <ul className="navbar-nav">
+                <li>
+                  <Link href="/">
+                    <a> Home </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/about">
+                    <a> About </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/contact">
+                    <a> Contact </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/product">
+                    <a> Product </a>
+                  </Link>
+                </li>
+                {user ? authLinks : guestLinks}
+              </ul>
             </div>
           </div>
         </nav>

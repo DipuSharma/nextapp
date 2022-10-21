@@ -1,15 +1,13 @@
-import Navbar from "../components/Navbar";
-import styles from "../styles/about.module.css"
+import Navbar from "../../components/Navbar";
 import Head from "next/head";
-import { getRegiToken } from '../utils/common';
-// import {getRegiToken} "../../nextapp/utils/common"
+import { getRegiToken } from '../../utils/common';
 
 const verify = async (context) => {
     const token = getRegiToken()
     const res = await fetch(`http://localhost:8000/verification?token=${token}`);
     const data = await res.json();
     if (data){
-        console.log("Mail verfication successfull");
+        alert(data.message)
     } else {
         console.log("main not verified");
     }
