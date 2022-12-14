@@ -1,7 +1,5 @@
-import { useEffect } from "react";
-import Navbar from "../components/Navbar";
 import { useRouter } from "next/router";
-
+import { useEffect } from "react";
 const Errorpage = () => {
   const router = useRouter();
 
@@ -17,7 +15,6 @@ const Errorpage = () => {
 
   return (
     <>
-      <Navbar />
       <div id="notfound">
         <div className="notfound">
           <div className="notfound-404">

@@ -1,8 +1,6 @@
-import Navbar from "../../components/Navbar";
-import Head from "next/head";
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { setRegistrationSession } from '../../utils/common';
+import { setRegistrationSession } from "../../utils/common";
 
 const Signup = () => {
   const [user_type, setType] = useState();
@@ -15,37 +13,32 @@ const Signup = () => {
   const submit = async (e) => {
     e.preventDefault();
     // console.warn({ user_type,name, email, password, confirm_password})
-    let data = ({ user_type, name, email, password, confirm_password })
+    let data = { user_type, name, email, password, confirm_password };
     if (password === confirm_password) {
-      fetch('http://127.0.0.1:8000/registration', {
-        method: 'POST',
+      fetch("http://127.0.0.1:8000/registration", {
+        method: "POST",
         headers: {
-          'accept': 'application/json',
-          'content-type': 'application/json',
+          accept: "application/json",
+          "content-type": "application/json",
         },
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
       }).then((result) => {
         result.json().then((response) => {
           setRegistrationSession(response.data);
           alert(response.message);
-          router.push('/userauth/signin');
-        })
-      })
+          router.push("/userauth/signin");
+        });
+      });
     } else {
       console.log("Password not match");
-      router.push('/userauth/signup');
+      router.push("/userauth/signup");
     }
-  }
+  };
   const handleReset = () => {
-    router.push('/userauth/signup');
-  }
+    router.push("/userauth/signup");
+  };
   return (
     <>
-      <Head>
-        <title>Sign Up Page</title>
-      </Head>
-      <Navbar />
-      
       <div className="container signup-page">
         <div className="row">
           <div className="col-md-4"></div>
@@ -55,34 +48,80 @@ const Signup = () => {
                 <h4>SignUp</h4>
                 <div className="form-group col">
                   <label>User Type</label>
-                  <input name="usertype" type="text" className={`form-control `} onChange={(e) => { setType(e.target.value) }} required/>
+                  <input
+                    name="usertype"
+                    type="text"
+                    className={`form-control `}
+                    onChange={(e) => {
+                      setType(e.target.value);
+                    }}
+                    required
+                  />
                   {/* <div className="invalid-feedback">{errors.lastName?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>First Name</label>
-                  <input name="firstName" type="text" className={`form-control`} onChange={(e) => { setName(e.target.value) }} required/>
+                  <input
+                    name="firstName"
+                    type="text"
+                    className={`form-control`}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
+                    required
+                  />
                   {/* <div className="invalid-feedback">{errors.firstName?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Email Id</label>
-                  <input name="email" type="email" className={`form-control `} onChange={(e) => { setEmail(e.target.value) }} required/>
+                  <input
+                    name="email"
+                    type="email"
+                    className={`form-control `}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
+                    required
+                  />
                   {/* <div className="invalid-feedback">{errors.email?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Password</label>
-                  <input name="password" type="password" className={`form-control`} onChange={(e) => { setPassword(e.target.value) }} required/>
+                  <input
+                    name="password"
+                    type="password"
+                    className={`form-control`}
+                    onChange={(e) => {
+                      setPassword(e.target.value);
+                    }}
+                    required
+                  />
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group col">
                   <label>Confirm Password</label>
-                  <input name="confirmpassword" type="password" className={`form-control`} onChange={(e) => { setCpassword(e.target.value) }} required/>
+                  <input
+                    name="confirmpassword"
+                    type="password"
+                    className={`form-control`}
+                    onChange={(e) => {
+                      setCpassword(e.target.value);
+                    }}
+                    required
+                  />
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">
-                  <button type="submit" className="btn btn-primary mr-2">
+                  <button type="submit" className="button-submit">
                     Signup
                   </button>
-                  <button type="button" onClick={handleReset} className="btn btn-secondary">Reset</button>
+                  <button
+                    type="button"
+                    onClick={handleReset}
+                    className="button-reset"
+                  >
+                    Reset
+                  </button>
                   {/* <Link href="/users" className="btn btn-link"><a>Cancel</a></Link> */}
                 </div>
               </form>

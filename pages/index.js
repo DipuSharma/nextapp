@@ -1,11 +1,13 @@
-import Header from "../components/Header";
-import MainPage from '../components/Body';
+import Featured from "../components/Featured";
+import HomeProduct from "../components/HomeProduct";
 
-export default function Home() {
+
+const Home = ({ data }) => {
   return (
     <>
-      <Header />
-      <MainPage />
+      <Featured />
+      <HomeProduct/>
     </>
-  )
-}
+  );
+};
+export default Home;

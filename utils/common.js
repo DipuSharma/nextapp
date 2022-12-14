@@ -1,7 +1,7 @@
 export const getUser = () => {
     if (typeof window !== 'undefined') {
         // Perform localStorage action
-        const userStr = sessionStorage.getItem('user')
+        const userStr = localStorage.getItem('user')
         if (userStr) return userStr;
         if (userStr === 'undefined') return 'undefined';
         else return null
@@ -12,7 +12,7 @@ export const getUser = () => {
 export const getToken = () => {
     if (typeof window !== 'undefined') {
         // Perform localStorage action
-        const userToken = sessionStorage.getItem('token')
+        const userToken = localStorage.getItem('token')
         if (userToken) return userToken;
         if (userToken === 'undefined') return 'undefined';
         else return null
@@ -22,7 +22,7 @@ export const getToken = () => {
 
 export const getRegiToken = () => {
     if (typeof window !== 'undefined') {
-        const token = sessionStorage.getItem('data')
+        const token = localStorage.getItem('data')
         console.log(token);
         if (token) return token;
         if (token === 'undefined') return 'undefined';
@@ -30,21 +30,20 @@ export const getRegiToken = () => {
     }
 }
 
-
 export const setUserSession = (token, user) => {
-    sessionStorage.setItem("token", token);
-    sessionStorage.setItem("user", user);
+    localStorage.setItem("token", token);
+    localStorage.setItem("user", user);
 }
 
 export const setRegistrationSession = (data) => {
-    sessionStorage.setItem("data", data);
+    localStorage.setItem("data", data);
 }
 
 export const removeRegistrationSession = () => {
-    sessionStorage.removeItem("data")
+    localStorage.removeItem("data")
 }
 
 export const removeUserSession = () => {
-    sessionStorage.removeItem("token");
-    sessionStorage.removeItem("user");
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
 }

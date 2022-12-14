@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Navbar from "../../components/Navbar";
 import { useRouter } from "next/router";
 
 const Empty = () => {
@@ -17,7 +16,6 @@ const Empty = () => {
 
   return (
     <>
-      <Navbar />
       <div id="notfound">
         <div className="notfound">
           <div className="notfound-404">

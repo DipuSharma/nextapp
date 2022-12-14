@@ -1,4 +1,3 @@
-import Navbar from "../../components/Navbar";
 import React, { useState, useEffect } from 'react';
 import { useRouter } from "next/router";
 import { setUserSession } from '../../utils/common';
@@ -57,7 +56,6 @@ const Signin = () => {
   }
   return (
     <>
-      <Navbar />
       <div className="container">
         <div className="row">
           <div className="col-md-4"></div>
@@ -82,8 +80,8 @@ const Signin = () => {
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">
-                  <button type="submit" className="btn btn-primary mr-2" > Signin </button>
-                  <button type="button" onClick={handleReset} className="btn btn-secondary">Reset</button>
+                  <button type="submit" className="button-submit" > Signin </button>
+                  <button type="button" onClick={handleReset} className="button-reset">Reset</button>
                   {/* <Link href="/users" className="btn btn-link"><a>Cancel</a></Link> */}
                 </div>
               </div>
