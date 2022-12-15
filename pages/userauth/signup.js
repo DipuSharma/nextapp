@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { setRegistrationSession } from "../../utils/common";
 
@@ -44,7 +45,7 @@ const Signup = () => {
           <div className="col-md-4"></div>
           <div className="col-md-4">
             <main className="form-signup">
-              <form onSubmit={submit}>
+              <form onSubmit={submit} className="form">
                 <h4>SignUp</h4>
                 <div className="form-group col">
                   <label>User Type</label>
@@ -122,6 +123,15 @@ const Signup = () => {
                   >
                     Reset
                   </button>
+                  <center>
+                    <p className="singup-link">
+                      Already registred user ?{" "}
+                      <Link href="/userauth/signin">
+                        <a className="signin-button">SignIn</a>
+                      </Link>
+                    </p>
+                  </center>
+
                   {/* <Link href="/users" className="btn btn-link"><a>Cancel</a></Link> */}
                 </div>
               </form>

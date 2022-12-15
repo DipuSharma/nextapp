@@ -80,7 +80,7 @@ const Signin = () => {
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">
-                  <button type="submit" className="button-submit" > Signin </button>
+                  <button type="submit" className="button-submit" > Submit </button>
                   <button type="button" onClick={handleReset} className="button-reset">Reset</button>
                   {/* <Link href="/users" className="btn btn-link"><a>Cancel</a></Link> */}
                 </div>

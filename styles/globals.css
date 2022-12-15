@@ -21,17 +21,37 @@ a {
 }
 /* Custom Navbar Css */
 .navbar{
-  background-color: rgb(35, 167, 17);
+  background-color: rgb(34, 65, 5);
   position: -webkit-sticky;
   z-index: 2;
-  height: 80px;
+  height: 6.8%;
+  width: 100%;
 }
-.collapse{
+.navbar-light .navbar-brand {
+  margin-left: 15px;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: italic;
+  color: rgb(255, 255, 255);
+}
+.navbar button {
+  margin-right: 15px;
+  background-color: white;
+}
+/* .collapse{
   padding: 0;
   display: flex;
   align-items: center;
   list-style: none;
+} */
+.navbar-toggler{
+  font-size: 0.8rem;
+  color: white;
 }
+.navbar-light .navbar-toggler{
+  border: 0.2px;
+}
+
 .listitem{
   font-weight: bold;
   font-size: 30;
@@ -40,6 +60,9 @@ a {
   border-radius: 50%;
   align-items: center;
   justify-content: center;
+}
+.show{
+  background-color: rgb(34, 65, 5);
 }
 
 /* Slide Css */
@@ -75,7 +98,10 @@ a {
   margin: 20px;
 }
 
-
+/* Admin Page css */
+.admin-container{
+  margin-top: 100px;
+}
 
 /* Signup Form */
 .signup-page{
@@ -89,6 +115,14 @@ a {
 }
 .form-signup button{
   margin: 20px;
+}
+.singup-link {
+  margin-left: 20px;
+  font-size: 12px;
+}
+.signin-button {
+  font-size: 12px;
+  font-weight: bold;
 }
 /* 404 error page  */
 
@@ -363,8 +397,9 @@ body {
   color: white;
 }
 .text-white{
-  background-color: rgb(24, 133, 10);
+  background-color: rgb(34, 65, 5);
   margin-top: 50px;
+  width: 100%;
 }
 .icon a{
   background-color: white;

@@ -1,4 +1,3 @@
-import Header from "../../components/Header";
 import { getRegiToken } from "../../utils/common";
 
 const verify = async (context) => {
@@ -8,7 +7,7 @@ const verify = async (context) => {
   if (data) {
     alert(data.message);
   } else {
-    console.log("main not verified");
+    alert("token expired")
   }
 
   return {

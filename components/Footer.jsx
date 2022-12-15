@@ -5,16 +5,14 @@ const Footer = () => {
                 <div className="container-fluid p-4">
                     <div className="row mt-4">
                         <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
-                            <h5 className="text-uppercase mb-4">About company</h5>
+                            <h5 className="text-uppercase mb-4">About Developer</h5>
 
                             <p>
-                                At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
-                                voluptatum deleniti atque corrupti.
+                                Develper is a fullstack Developer. he is done BE(Bachelor of Engineering), from Bhopal.
                             </p>
 
                             <p>
-                                Blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas
-                                molestias.
+                                College - Sistec, affliated to RGPV, Gandhi Nagar, Bhopal.
                             </p>
 
                             <div className="icon mt-4">
