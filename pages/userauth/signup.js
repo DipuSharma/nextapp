@@ -13,8 +13,7 @@ const Signup = () => {
 
   const submit = async (e) => {
     e.preventDefault();
-    // console.warn({ user_type,name, email, password, confirm_password})
-    let data = { user_type, name, email, password, confirm_password };
+    let data = { name, email, password, confirm_password };
     if (password === confirm_password) {
       fetch("http://127.0.0.1:8000/registration", {
         method: "POST",
@@ -47,19 +46,6 @@ const Signup = () => {
             <main className="form-signup">
               <form onSubmit={submit} className="form">
                 <h4>SignUp</h4>
-                <div className="form-group col">
-                  <label>User Type</label>
-                  <input
-                    name="usertype"
-                    type="text"
-                    className={`form-control `}
-                    onChange={(e) => {
-                      setType(e.target.value);
-                    }}
-                    required
-                  />
-                  {/* <div className="invalid-feedback">{errors.lastName?.message}</div> */}
-                </div>
                 <div className="form-group col">
                   <label>First Name</label>
                   <input
@@ -113,13 +99,13 @@ const Signup = () => {
                   {/* <div className="invalid-feedback">{errors.password?.message}</div> */}
                 </div>
                 <div className="form-group">
-                  <button type="submit" className="button-submit">
-                    Signup
+                  <button type="submit" className="btn btn-primary">
+                    Submit
                   </button>
                   <button
                     type="button"
                     onClick={handleReset}
-                    className="button-reset"
+                    className="btn btn-warning"
                   >
                     Reset
                   </button>
@@ -127,7 +113,7 @@ const Signup = () => {
                     <p className="singup-link">
                       Already registred user ?{" "}
                       <Link href="/userauth/signin">
-                        <a className="signin-button">SignIn</a>
+                        <a className="btn signin-button">SignIn</a>
                       </Link>
                     </p>
                   </center>

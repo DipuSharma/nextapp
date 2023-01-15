@@ -5,12 +5,15 @@ import 'bootstrap/dist/css/bootstrap.css';
 import React, { Fragment, useEffect } from 'react';
 import { getUser, getToken, removeUserSession, removeRegistrationSession } from '../utils/common';
 import { useRouter } from "next/router";
+
+
 const Navbar = () => {
   const user = getUser()
   const token = getToken()
   const router = useRouter()
 
   const handleLogout = () => {
+    removeUserSession()
     console.log("logout");
     router.push('/userauth/signin')
   }
@@ -46,23 +49,29 @@ const Navbar = () => {
 
   const authLinks = (
     <Fragment>
-      <li className="listitem">
-        <Link href='/userauth/profile'>
-          <a>Profile</a>
-        </Link>
-      </li>
-      <li className="listitem">
-        <Link href='/userauth/address'>
-          <a></a>
-        </Link>
-      </li>
-      <li className="listitem">
-        <Link href='/userauth/address'>
-          <a><span className="fa fa-cart"></span></a>
-        </Link>
-      </li>
-      <li onClick={handleLogout} className="listitem">
-        <a href='#!'>Logout</a>
+      <li className="listitem dropdown">
+        <div className="dropdown">
+          <Link href='/userauth/profile'>
+            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+              Profile
+            </a>
+          </Link>
+          <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li className="dropdown-listitem">
+              <Link href='/userauth/profile'><a className="dropdown-item">View Details</a></Link>
+            </li>
+            <li className="dropdown-listitem">
+              <Link href='/userauth/order_view'><a className="dropdown-item">View Order</a></Link>
+            </li>
+            <li className="dropdown-listitem">
+              <Link href='/userauth/profile'><a className="dropdown-item">Another action</a></Link>
+            </li>
+            <li><hr className="dropdown-divider" /></li>
+            <li onClick={handleLogout} className="dropdown-listitem">
+              <a href='#!' className="dropdown-item">Logout</a>
+            </li>
+          </ul>
+        </div>
       </li>
     </Fragment>
   );
@@ -73,7 +82,7 @@ const Navbar = () => {
       <Head>
         <meta name="description" content="Best pizza shop in town" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
       </Head>
       <Script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" />
       <Script src="https://code.jquery.com/jquery-3.5.1.min.js" />
@@ -93,7 +102,7 @@ const Navbar = () => {
                   </Link>
                 </li>
                 <li className="listitem">
-                  <Link href="/product">
+                  <Link href="/product/product">
                     <a> Product </a>
                   </Link>
                 </li>
@@ -107,7 +116,7 @@ const Navbar = () => {
                     <a> Contact </a>
                   </Link>
                 </li>
-                
+
                 {/* {user ? authLinks : guestLinks} */}
               </ul>
             </div>

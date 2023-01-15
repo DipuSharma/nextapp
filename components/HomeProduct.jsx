@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { toast } from 'react-nextjs-toast'
 import React, { useState, useEffect } from "react";
 
 const HomeProduct = () => {
@@ -27,22 +28,24 @@ const HomeProduct = () => {
                 .finally(() => {
                     setLoading(false);
                 });
-        }, 2000);
+        }, 1000);
     }, []);
-
+    const onClickNotify = () => {
+        toast.notify(`Hi, I am a toast!`)
+      }
     if (!data) {
         return (
             <div className="container mt-5">
                 <div className="row">
                     <h4>Recod Not Found</h4>
                     <div className="col-md-3">
-                        <div class="card">
-                            <div class="image-container">
-                                <div class="first">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="discount">-25%</span>
-                                        <span class="wishlist">
-                                            <i class="fa fa-heart-o"></i>
+                        <div className="card">
+                            <div className="image-container">
+                                <div className="first">
+                                    <div className="d-flex justify-content-between align-items-center">
+                                        <span className="discount">-25%</span>
+                                        <span className="wishlist">
+                                            <i className="fa fa-heart-o"></i>
                                         </span>
                                     </div>
                                 </div>
@@ -51,66 +54,67 @@ const HomeProduct = () => {
                                     src="/img/8JIWpnw.jpg"
                                     width={300}
                                     height={300}
-                                    class="img-fluid rounded thumbnail-image"
+                                    className="img-fluid rounded thumbnail-image"
                                 />
                             </div>
 
-                            <div class="product-detail-container p-2">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="dress-name">White traditional long dress</h5>
-                                    <div class="d-flex flex-column mb-2">
-                                        <span class="new-price">$3.99</span>
-                                        <small class="old-price text-right">$5.99</small>
+                            <div className="product-detail-container p-2">
+                                <div className="d-flex justify-content-between align-items-center">
+                                    <h5 className="dress-name">White traditional long dress</h5>
+                                    <div className="d-flex flex-column mb-2">
+                                        <span className="new-price">$3.99</span>
+                                        <small className="old-price text-right">$5.99</small>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center pt-1">
-                                    <div class="color-select d-flex ">
-                                        <input type="button" name="grey" class="btn creme" />
-                                        <input type="button" name="red" class="btn red ml-2" />
-                                        <input type="button" name="blue" class="btn blue ml-2" />
+                                <div className="d-flex justify-content-between align-items-center pt-1">
+                                    <div className="color-select d-flex ">
+                                        <input type="button" name="grey" className="product-btn  creme" />
+                                        <input type="button" name="red" className="product-btn  red ml-2" />
+                                        <input type="button" name="blue" className="product-btn  blue ml-2" />
                                     </div>
-                                    <div class="d-flex ">
-                                        <span class="item-size mr-2 btn" type="button">
+                                    <div className="d-flex ">
+                                        <span className="item-size mr-2 product-btn " type="button">
                                             S
                                         </span>
-                                        <span class="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn " type="button">
                                             M
                                         </span>
-                                        <span class="item-size btn" type="button">
+                                        <span className="item-size btn" type="button">
                                             L
                                         </span>
                                     </div>
                                 </div>
-                                <div class="d-flex justify-content-between align-items-center pt-1">
+                                <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div>
-                                        <i class="fa fa-star-o rating-star"></i>
-                                        <span class="rating-number">4.8</span>
+                                        <i className="fa fa-star-o rating-star"></i>
+                                        <span className="rating-number">4.8</span>
                                     </div>
 
                                     <Link href="#">
-                                        <a ><span class="buy">View Detals</span></a>
+                                        <a ><span className="buy">View Detals</span></a>
                                     </Link>
                                     <Link href="#">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                        <div class="mt-3">
-                            <div class="card voutchers">
-                                <div class="voutcher-divider">
-                                    <div class="voutcher-left text-center">
-                                        <span class="voutcher-name">Monday Happy</span>
-                                        <h5 class="voutcher-code">#MONHPY</h5>
+                        <div className="mt-3">
+                            <div className="card voutchers">
+                                <div className="voutcher-divider">
+                                    <div className="voutcher-left text-center">
+                                        <span className="voutcher-name">Monday Happy</span>
+                                        <h5 className="voutcher-code">#MONHPY</h5>
                                     </div>
-                                    <div class="voutcher-right text-center border-left">
-                                        <h5 class="discount-percent">20%</h5>
-                                        <span class="off">Off</span>
+                                    <div className="voutcher-right text-center border-left">
+                                        <h5 className="discount-percent">20%</h5>
+                                        <span className="off">Off</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <button className="btn btn-primary" onClick={onClickNotify}>Click Me</button>
                 </div>
             </div>
         )
@@ -118,85 +122,91 @@ const HomeProduct = () => {
     if (data) {
         return (
             <div className="container mt-5">
-                <div className="row">
-                    <div className="col-md-3">
-                        <div class="card">
-                            <div class="image-container">
-                                <div class="first">
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="discount">-25%</span>
-                                        <span class="wishlist">
-                                            <i class="fa fa-heart-o"></i>
-                                        </span>
+                <div className="row home-product">
+                    {data.map((item) => {
+                        return(
+                            <div className="col-md-3" key={item.id}>
+                                <div className="card">
+                                    <div className="image-container">
+                                        <div className="first">
+                                            <div className="d-flex justify-content-between align-items-center">
+                                                <span className="discount">-25%</span>
+                                                <span className="wishlist">
+                                                    <i className="fa fa-heart-o"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+
+                                        <Image
+                                            loader={() => item.images}
+                                            src={item.images}
+                                            // src="/img/8JIWpnw.jpg"
+                                            width={300}
+                                            height={300}
+                                            className="img-fluid rounded thumbnail-image"
+                                        />
+                                    </div>
+
+                                    <div className="product-detail-container p-2">
+                                        <div className="d-flex justify-content-between align-items-center">
+                                            <h5 className="dress-name">White traditional long dress</h5>
+                                            <div className="d-flex flex-column mb-2">
+                                                <span className="new-price">${item.d_price}</span>
+                                                <small className="old-price text-right">${item.price}</small>
+                                            </div>
+                                        </div>
+                                        <div className="d-flex justify-content-between align-items-center pt-1">
+                                            <div className="color-select d-flex ">
+                                                <input type="button" name="grey" className="product-btn creme" />
+                                                <input type="button" name="red" className="product-btn red ml-2" />
+                                                <input type="button" name="blue" className="product-btn blue ml-2" />
+                                            </div>
+                                            <div className="d-flex ">
+                                                <span className="item-size mr-2 product-btn" type="button">
+                                                    S
+                                                </span>
+                                                <span className="item-size mr-2 product-btn" type="button">
+                                                    M
+                                                </span>
+                                                <span className="item-size product-btn" type="button">
+                                                    L
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <div className="d-flex justify-content-between align-items-center pt-1">
+                                            <div>
+                                                <i className="fa fa-star-o rating-star"></i>
+                                                <span className="rating-number">4.8</span>
+                                            </div>
+
+                                            {/* <span className="buy">BUY +</span> */}
+
+                                            <Link href={`/product/${item.id}`}>
+                                                <a ><span className="buy">Detals</span></a>
+                                            </Link>
+                                            <Link href={`/add-to-cart?${item.id}`}>
+                                                <a ><span className="buy">BUY +</span></a>
+                                            </Link>
+                                        </div>
                                     </div>
                                 </div>
-
-                                <Image
-                                    src="/img/8JIWpnw.jpg"
-                                    width={300}
-                                    height={300}
-                                    class="img-fluid rounded thumbnail-image"
-                                />
+                                <div className="mt-3">
+                                    <div className="card voutchers">
+                                        <div className="voutcher-divider">
+                                            <div className="voutcher-left text-center">
+                                                <span className="voutcher-name">Monday Happy</span>
+                                                <h5 className="voutcher-code">#MONHPY</h5>
+                                            </div>
+                                            <div className="voutcher-right text-center border-left">
+                                                <h5 className="discount-percent">20%</h5>
+                                                <span className="off">Off</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="product-detail-container p-2">
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <h5 class="dress-name">White traditional long dress</h5>
-                                    <div class="d-flex flex-column mb-2">
-                                        <span class="new-price">$3.99</span>
-                                        <small class="old-price text-right">$5.99</small>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center pt-1">
-                                    <div class="color-select d-flex ">
-                                        <input type="button" name="grey" class="btn creme" />
-                                        <input type="button" name="red" class="btn red ml-2" />
-                                        <input type="button" name="blue" class="btn blue ml-2" />
-                                    </div>
-                                    <div class="d-flex ">
-                                        <span class="item-size mr-2 btn" type="button">
-                                            S
-                                        </span>
-                                        <span class="item-size mr-2 btn" type="button">
-                                            M
-                                        </span>
-                                        <span class="item-size btn" type="button">
-                                            L
-                                        </span>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between align-items-center pt-1">
-                                    <div>
-                                        <i class="fa fa-star-o rating-star"></i>
-                                        <span class="rating-number">4.8</span>
-                                    </div>
-
-                                    {/* <span class="buy">BUY +</span> */}
-
-                                    <Link href={`/product/${item.id}`}>
-                                        <a ><span class="buy">Detals</span></a>
-                                    </Link>
-                                    <Link href={`/add-to-cart?${item.id}`}>
-                                        <a ><span class="buy">BUY +</span></a>
-                                    </Link>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="mt-3">
-                            <div class="card voutchers">
-                                <div class="voutcher-divider">
-                                    <div class="voutcher-left text-center">
-                                        <span class="voutcher-name">Monday Happy</span>
-                                        <h5 class="voutcher-code">#MONHPY</h5>
-                                    </div>
-                                    <div class="voutcher-right text-center border-left">
-                                        <h5 class="discount-percent">20%</h5>
-                                        <span class="off">Off</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        );
+                    })}
                     <div className="col-md-3">
                         <div className="card">
                             <div className="image-container">
@@ -229,23 +239,23 @@ const HomeProduct = () => {
 
                                 <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div className="color-select d-flex ">
-                                        <input type="button" name="grey" className="btn creme" />
+                                        <input type="button" name="grey" className="product-btn creme" />
 
                                         <input
                                             type="button"
                                             name="darkblue"
-                                            className="btn darkblue ml-2"
+                                            className="product-btn darkblue ml-2"
                                         />
                                     </div>
 
                                     <div className="d-flex ">
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             S
                                         </span>
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             M
                                         </span>
-                                        <span className="item-size btn" type="button">
+                                        <span className="item-size product-btn" type="button">
                                             L
                                         </span>
                                     </div>
@@ -257,10 +267,10 @@ const HomeProduct = () => {
                                         <span className="rating-number">4.8</span>
                                     </div>
                                     <Link href="#">
-                                        <a ><span class="buy">Add Cart +</span></a>
+                                        <a ><span className="buy">Add Cart +</span></a>
                                     </Link>
                                     <Link href="">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>
@@ -312,23 +322,23 @@ const HomeProduct = () => {
 
                                 <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div className="color-select d-flex ">
-                                        <input type="button" name="grey" className="btn creme" />
+                                        <input type="button" name="grey" className="product-btn creme" />
 
                                         <input
                                             type="button"
                                             name="darkblue"
-                                            className="btn darkblue ml-2"
+                                            className="product-btn darkblue ml-2"
                                         />
                                     </div>
 
                                     <div className="d-flex ">
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             S
                                         </span>
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             M
                                         </span>
-                                        <span className="item-size btn" type="button">
+                                        <span className="item-size product-btn" type="button">
                                             L
                                         </span>
                                     </div>
@@ -341,10 +351,10 @@ const HomeProduct = () => {
                                     </div>
 
                                     <Link href="#">
-                                        <a ><span class="buy">Add Cart +</span></a>
+                                        <a ><span className="buy">Add Cart +</span></a>
                                     </Link>
                                     <Link href="">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>
@@ -396,23 +406,23 @@ const HomeProduct = () => {
 
                                 <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div className="color-select d-flex ">
-                                        <input type="button" name="grey" className="btn creme" />
+                                        <input type="button" name="grey" className="product-btn creme" />
 
                                         <input
                                             type="button"
                                             name="darkblue"
-                                            className="btn darkblue ml-2"
+                                            className="product-btn darkblue ml-2"
                                         />
                                     </div>
 
                                     <div className="d-flex ">
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             S
                                         </span>
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             M
                                         </span>
-                                        <span className="item-size btn" type="button">
+                                        <span className="item-size product-btn" type="button">
                                             L
                                         </span>
                                     </div>
@@ -425,10 +435,10 @@ const HomeProduct = () => {
                                     </div>
 
                                     <Link href="#">
-                                        <a ><span class="buy">Add Cart +</span></a>
+                                        <a ><span className="buy">Add Cart +</span></a>
                                     </Link>
                                     <Link href="">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>
@@ -480,23 +490,23 @@ const HomeProduct = () => {
 
                                 <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div className="color-select d-flex ">
-                                        <input type="button" name="grey" className="btn creme" />
+                                        <input type="button" name="grey" className="product-btn creme" />
 
                                         <input
                                             type="button"
                                             name="darkblue"
-                                            className="btn darkblue ml-2"
+                                            className="product-btn darkblue ml-2"
                                         />
                                     </div>
 
                                     <div className="d-flex ">
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             S
                                         </span>
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             M
                                         </span>
-                                        <span className="item-size btn" type="button">
+                                        <span className="item-size product-btn" type="button">
                                             L
                                         </span>
                                     </div>
@@ -509,10 +519,10 @@ const HomeProduct = () => {
                                     </div>
 
                                     <Link href="#">
-                                        <a ><span class="buy">Add Cart +</span></a>
+                                        <a ><span className="buy">Add Cart +</span></a>
                                     </Link>
                                     <Link href="">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>
@@ -564,23 +574,23 @@ const HomeProduct = () => {
 
                                 <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div className="color-select d-flex ">
-                                        <input type="button" name="grey" className="btn creme" />
+                                        <input type="button" name="grey" className="product-btn creme" />
 
                                         <input
                                             type="button"
                                             name="darkblue"
-                                            className="btn darkblue ml-2"
+                                            className="product-btn darkblue ml-2"
                                         />
                                     </div>
 
                                     <div className="d-flex ">
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             S
                                         </span>
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             M
                                         </span>
-                                        <span className="item-size btn" type="button">
+                                        <span className="item-size product-btn" type="button">
                                             L
                                         </span>
                                     </div>
@@ -593,10 +603,10 @@ const HomeProduct = () => {
                                     </div>
 
                                     <Link href="#">
-                                        <a ><span class="buy">Add Cart +</span></a>
+                                        <a ><span className="buy">Add Cart +</span></a>
                                     </Link>
                                     <Link href="">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>
@@ -648,23 +658,23 @@ const HomeProduct = () => {
 
                                 <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div className="color-select d-flex ">
-                                        <input type="button" name="grey" className="btn creme" />
+                                        <input type="button" name="grey" className="product-btn creme" />
 
                                         <input
                                             type="button"
                                             name="darkblue"
-                                            className="btn darkblue ml-2"
+                                            className="product-btn darkblue ml-2"
                                         />
                                     </div>
 
                                     <div className="d-flex ">
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             S
                                         </span>
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             M
                                         </span>
-                                        <span className="item-size btn" type="button">
+                                        <span className="item-size product-btn" type="button">
                                             L
                                         </span>
                                     </div>
@@ -677,10 +687,10 @@ const HomeProduct = () => {
                                     </div>
 
                                     <Link href="#">
-                                        <a ><span class="buy">Add Cart +</span></a>
+                                        <a ><span className="buy">Add Cart +</span></a>
                                     </Link>
                                     <Link href="">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>
@@ -732,23 +742,23 @@ const HomeProduct = () => {
 
                                 <div className="d-flex justify-content-between align-items-center pt-1">
                                     <div className="color-select d-flex ">
-                                        <input type="button" name="grey" className="btn creme" />
+                                        <input type="button" name="grey" className="product-btn creme" />
 
                                         <input
                                             type="button"
                                             name="darkblue"
-                                            className="btn darkblue ml-2"
+                                            className="product-btn darkblue ml-2"
                                         />
                                     </div>
 
                                     <div className="d-flex ">
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             S
                                         </span>
-                                        <span className="item-size mr-2 btn" type="button">
+                                        <span className="item-size mr-2 product-btn" type="button">
                                             M
                                         </span>
-                                        <span className="item-size btn" type="button">
+                                        <span className="item-size product-btn" type="button">
                                             L
                                         </span>
                                     </div>
@@ -761,10 +771,10 @@ const HomeProduct = () => {
                                     </div>
 
                                     <Link href="#">
-                                        <a ><span class="buy">Add Cart +</span></a>
+                                        <a ><span className="buy">Add Cart +</span></a>
                                     </Link>
                                     <Link href="">
-                                        <a ><span class="buy">BUY +</span></a>
+                                        <a ><span className="buy">BUY +</span></a>
                                     </Link>
                                 </div>
                             </div>

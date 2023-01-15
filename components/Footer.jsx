@@ -6,23 +6,20 @@ const Footer = () => {
                     <div className="row mt-4">
                         <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
                             <h5 className="text-uppercase mb-4">About Developer</h5>
-
                             <p>
                                 Develper is a fullstack Developer. he is done BE(Bachelor of Engineering), from Bhopal.
                             </p>
-
                             <p>
                                 College - Sistec, affliated to RGPV, Gandhi Nagar, Bhopal.
                             </p>
-
                             <div className="icon mt-4">
-                                <a type="button" className="btn btn-floating social-icon"><i className="fa fa-facebook-f"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-facebook-f"></i></a>
 
-                                <a type="button" className="btn btn-floating social-icon"><i className="fa fa-dribbble"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-dribbble"></i></a>
 
-                                <a type="button" className="btn btn-floating social-icon"><i className="fa fa-twitter"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-twitter"></i></a>
 
-                                <a type="button" className="btn btn-floating social-icon"><i className="fa fa-google-plus-g"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-google-plus-g"></i></a>
 
                             </div>
                         </div>
@@ -30,7 +27,7 @@ const Footer = () => {
                             <h5 className="text-uppercase mb-4 pb-1">Search something</h5>
 
                             <div className="form-outline form-white mb-4">
-                                <input type="text" id="formControlLg" className="form-control form-control-lg" placeholder="Search here"/>
+                                <input type="text" id="formControlLg" className="form-control form-control-lg" placeholder="Search here" />
                             </div>
                             {/* style="margin-left: 1.65em;" */}
                             <ul className="fa-ul">
@@ -72,7 +69,7 @@ const Footer = () => {
                 </div>
                 {/* style="background-color: rgba(0, 0, 0, 0.2);" */}
                 <div className="text-center p-3">
-                    © 2021 Copyright:
+                    Copyright© 2021 :
                     <a className="text-white" href="#"> DipuSharma</a>
                 </div>
             </footer>
