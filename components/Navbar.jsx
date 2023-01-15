@@ -30,18 +30,11 @@ const Navbar = () => {
   const guestLinks = (
     <Fragment>
       <li className="verifyemail">
-        <Link href="/userauth/verification">
-          <a></a>
-        </Link>
-      </li>
-      <li className="verifyemail">
         <Link href={`/userauth/verification?token=${token}`}>
-          <a></a>
         </Link>
       </li>
       <li className="listitem">
-        <Link href='/userauth/signup'>
-          <a>SignUp</a>
+        <Link href='/userauth/signup'>SignUp
         </Link>
       </li>
     </Fragment>
@@ -51,24 +44,22 @@ const Navbar = () => {
     <Fragment>
       <li className="listitem dropdown">
         <div className="dropdown">
-          <Link href='/userauth/profile'>
-            <a className="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+          <Link href='/userauth/profile' className="dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
               Profile
-            </a>
           </Link>
           <ul className="dropdown-menu" aria-labelledby="dropdownMenuLink">
             <li className="dropdown-listitem">
-              <Link href='/userauth/profile'><a className="dropdown-item">View Details</a></Link>
+              <Link href='/userauth/profile' className="dropdown-item">View Details</Link>
             </li>
             <li className="dropdown-listitem">
-              <Link href='/userauth/order_view'><a className="dropdown-item">View Order</a></Link>
+              <Link href='/userauth/order_view' className="dropdown-item">View Order</Link>
             </li>
             <li className="dropdown-listitem">
-              <Link href='/userauth/profile'><a className="dropdown-item">Another action</a></Link>
+              <Link href='/userauth/profile' className="dropdown-item">Another action</Link>
             </li>
             <li><hr className="dropdown-divider" /></li>
             <li onClick={handleLogout} className="dropdown-listitem">
-              <a href='#!' className="dropdown-item">Logout</a>
+              <Link href="#!" className="dropdown-item">Logout</Link>
             </li>
           </ul>
         </div>
@@ -89,7 +80,7 @@ const Navbar = () => {
       <Script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" />
       <div className="container-fluid">
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-          <Link href="/"><a className="navbar-brand" href="/">Navbar</a></Link>
+          <Link href="/" className="navbar-brand">Navbar</Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -97,23 +88,19 @@ const Navbar = () => {
             <div className="item">
               <ul className="navbar-nav">
                 <li className="listitem">
-                  <Link href="/">
-                    <a> Home </a>
+                  <Link href="/">Home 
                   </Link>
                 </li>
                 <li className="listitem">
-                  <Link href="/product/product">
-                    <a> Product </a>
+                  <Link href="/product/product">Product 
                   </Link>
                 </li>
                 <li className="listitem">
-                  <Link href="/about">
-                    <a> About </a>
+                  <Link href="/about">About 
                   </Link>
                 </li>
                 <li className="listitem">
-                  <Link href="/contact">
-                    <a> Contact </a>
+                  <Link href="/contact"> Contact 
                   </Link>
                 </li>
 

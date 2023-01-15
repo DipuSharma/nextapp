@@ -53,6 +53,7 @@ const Product = () => {
                   width={300}
                   height={300}
                   className="img-fluid rounded thumbnail-image"
+                  alt="Image"
                 />
               </div>
 
@@ -160,6 +161,7 @@ const Product = () => {
                         width={300}
                         height={300}
                         className="img-fluid rounded thumbnail-image"
+                        alt="image"
                       />
                     </div>
 

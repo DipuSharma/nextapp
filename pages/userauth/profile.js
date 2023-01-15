@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import ReactPlayer from "react-player";
 import { toast } from "react-nextjs-toast";
 import { useRouter } from "next/router";
@@ -75,6 +76,7 @@ const Profile = () => {
     setTimeout(() => {
       fetch("http://127.0.0.1:8000/me", {
         method: "GET",
+         // eslint-disable-next-line react-hooks/exhaustive-deps
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((result) => {
@@ -85,6 +87,7 @@ const Profile = () => {
               removeUserSession();
               removeRegistrationSession();
               toast.notify(`Ooops session expired.!!!!!!`);
+               // eslint-disable-next-line react-hooks/exhaustive-deps
               router.push("/userauth/signin");
             }
           });
@@ -93,12 +96,14 @@ const Profile = () => {
           removeUserSession();
           removeRegistrationSession();
           toast.notify(`Server is down .!!!!!!`);
+           // eslint-disable-next-line react-hooks/exhaustive-deps
           router.push("/userauth/signin");
         })
         .finally(() => {
           // setLoading(false);
         });
     }, 100);
+     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   // Camera
@@ -121,12 +126,13 @@ const Profile = () => {
               <div className="row">
                 <div className="col-md-1"></div>
                 <div className="col-md-2 col-xl-4 profile-image">
-                  <img
+                  <Image
                     className="img-fluid rounded thumbnail-image "
                     src="/user.png"
                     width={150}
                     height={150}
-                  ></img>
+                    alt="image"
+                  />
                 </div>
                 <div className="col-md-1"></div>
               </div>

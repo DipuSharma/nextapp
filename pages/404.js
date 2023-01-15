@@ -11,6 +11,7 @@ const Errorpage = () => {
     setTimeout(() => {
       router.push("/");
     }, 3000);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
