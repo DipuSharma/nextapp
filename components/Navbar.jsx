@@ -30,7 +30,13 @@ const Navbar = () => {
   const guestLinks = (
     <Fragment>
       <li className="verifyemail">
+        <Link href={`/userauth/verification`}>
+          <a></a>
+        </Link>
+      </li>
+      <li className="verifyemail">
         <Link href={`/userauth/verification?token=${token}`}>
+          <a></a>
         </Link>
       </li>
       <li className="listitem">
