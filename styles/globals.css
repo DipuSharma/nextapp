@@ -7,6 +7,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
+a{
+  color: white !important;
+  text-decoration: none;
+}
 .about-page{
   margin-top: 4rem !important;
 }
