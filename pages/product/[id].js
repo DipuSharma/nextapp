@@ -30,6 +30,7 @@ export const DynamicPage = ({ data }) => {
                 src={data.data.images}
                 width={100}
                 height={100}
+                alt="Image"
               />
               <h5 style={{ textAlign: "center" }}>
                 Name : {data.data.product_name}

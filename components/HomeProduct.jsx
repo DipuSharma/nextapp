@@ -29,6 +29,7 @@ const HomeProduct = () => {
                     setLoading(false);
                 });
         }, 1000);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
     const onClickNotify = () => {
         toast.notify(`Hi, I am a toast!`)
@@ -55,6 +56,8 @@ const HomeProduct = () => {
                                     width={300}
                                     height={300}
                                     className="img-fluid rounded thumbnail-image"
+                                    alt="image"
+                                    
                                 />
                             </div>
 
@@ -144,6 +147,7 @@ const HomeProduct = () => {
                                             width={300}
                                             height={300}
                                             className="img-fluid rounded thumbnail-image"
+                                            alt="image"
                                         />
                                     </div>
 
@@ -224,6 +228,7 @@ const HomeProduct = () => {
                                     className="img-fluid rounded thumbnail-image"
                                     width={300}
                                     height={300}
+                                    alt="image"
                                 />
                             </div>
 
@@ -307,6 +312,7 @@ const HomeProduct = () => {
                                     className="img-fluid rounded thumbnail-image"
                                     width={300}
                                     height={300}
+                                    alt="image"
                                 />
                             </div>
 
@@ -391,6 +397,7 @@ const HomeProduct = () => {
                                     className="img-fluid rounded thumbnail-image"
                                     width={300}
                                     height={300}
+                                    alt="image"
                                 />
                             </div>
 
@@ -475,6 +482,7 @@ const HomeProduct = () => {
                                     className="img-fluid rounded thumbnail-image"
                                     width={300}
                                     height={300}
+                                    alt="image"
                                 />
                             </div>
 
@@ -559,6 +567,7 @@ const HomeProduct = () => {
                                     className="img-fluid rounded thumbnail-image"
                                     width={300}
                                     height={300}
+                                    alt="image"
                                 />
                             </div>
 
@@ -643,6 +652,7 @@ const HomeProduct = () => {
                                     className="img-fluid rounded thumbnail-image"
                                     width={300}
                                     height={300}
+                                    alt="image"
                                 />
                             </div>
 
@@ -727,6 +737,7 @@ const HomeProduct = () => {
                                     className="img-fluid rounded thumbnail-image"
                                     width={300}
                                     height={300}
+                                    alt="image"
                                 />
                             </div>
 
