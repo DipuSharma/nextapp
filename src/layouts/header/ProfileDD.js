@@ -1,7 +1,7 @@
 import React from "react";
 import FeatherIcon from "feather-icons-react";
 import Image from "next/image";
-import userimg from "../../../assets/images/users/user2.jpg";
+
 import {
   Box,
   Menu,
@@ -14,6 +14,7 @@ import {
   Divider,
 } from "@mui/material";
 const ProfileDD = () => {
+  let userimg = "../../../assets/images/users/user2.jpg";
   const [anchorEl4, setAnchorEl4] = React.useState(null);
 
   const handleClick4 = (event) => {
