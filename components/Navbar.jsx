@@ -116,7 +116,7 @@ const Navbar = () => {
                 {/* {user ? authLinks : guestLinks} */}
               </ul>
             </div>
-            <div className="item">
+            <div className="item ms-auto mb-2 mb-lg-0">
               <ul className="navbar-nav">
                 {user ? authLinks : guestLinks}
               </ul>
