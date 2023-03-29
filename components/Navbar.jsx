@@ -40,7 +40,7 @@ const Navbar = () => {
         </Link>
       </li>
       <li className="listitem">
-        <i class="fa-solid fa-right-to-bracket" style={{'marginLeft':5, 'marginRight':5}}></i>
+        <i className="fa-solid fa-right-to-bracket" style={{'marginLeft':5, 'marginRight':5}}></i>
         <Link href='/userauth/signup'>SignUp
         </Link>
       </li>
@@ -97,7 +97,7 @@ const Navbar = () => {
             <div className="item">
               <ul className="navbar-nav">
                 <li className="listitem">
-                  <i class="fa-solid fa-house" style={{'marginRight':5}}></i>
+                  <i className="fa-solid fa-house" style={{'marginRight':5}}></i>
                   <Link href="/">Home</Link>
                 </li>
                 <li className="listitem">
