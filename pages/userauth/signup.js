@@ -112,8 +112,9 @@ const Signup = () => {
                   <center>
                     <p className="singup-link">
                       Already registred user ?{" "}
+                      <i class="fa-solid fa-right-to-bracket" style={{'marginLeft':5, 'marginRight':5}}></i>
                       <Link href="/userauth/signin">
-                        <a className="btn signin-button">SignIn</a>
+                        SignIn
                       </Link>
                     </p>
                   </center>

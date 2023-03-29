@@ -1,25 +1,26 @@
+import Link from "next/link";
 const Footer = () => {
     return (
         <div className="container-fluid">
-            <footer className="text-white text-center text-lg-start">
+            <footer className="footer-box text-center text-lg-start">
                 <div className="container-fluid p-4">
                     <div className="row mt-4">
                         <div className="col-lg-4 col-md-12 mb-4 mb-md-0">
                             <h5 className="text-uppercase mb-4">About Developer</h5>
-                            <p>
+                            <p className="footer-paragraph text-white">
                                 Develper is a fullstack Developer. he is done BE(Bachelor of Engineering), from Bhopal.
                             </p>
-                            <p>
+                            <p className="footer-paragraph text-white">
                                 College - Sistec, affliated to RGPV, Gandhi Nagar, Bhopal.
                             </p>
                             <div className="icon mt-4">
-                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-facebook-f"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa-brands fa-facebook"></i></a>
 
-                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-dribbble"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa-brands fa-dribbble"></i></a>
 
-                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-twitter"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa-brands fa-twitter"></i></a>
 
-                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa fa-google-plus-g"></i></a>
+                                <a type="button" className="footer-icon-btn btn-floating social-icon"><i className="fa-brands fa-google-plus-g"></i></a>
 
                             </div>
                         </div>
@@ -30,7 +31,7 @@ const Footer = () => {
                                 <input type="text" id="formControlLg" className="form-control form-control-lg" placeholder="Search here" />
                             </div>
                             {/* style="margin-left: 1.65em;" */}
-                            <ul className="fa-ul">
+                            <ul className="fa-ul text-white">
                                 <li className="mb-3">
                                     <span className="fa-li"><i className="fas fa-home"></i></span><span className="ms-2">Ballia, Sahatwar 277209, UP</span>
                                 </li>
@@ -68,9 +69,10 @@ const Footer = () => {
                     </div>
                 </div>
                 {/* style="background-color: rgba(0, 0, 0, 0.2);" */}
-                <div className="text-center p-3">
+                <div className="container-fluid text-center p-3 copyright">
                     Copyright© 2021 :
-                    <a className="text-white" href="#"> DipuSharma</a>
+                    <span className="copyright-link"><Link className="text-white" href="/"> DipuSharma</Link></span>
+                    
                 </div>
             </footer>
 
