@@ -35,7 +35,7 @@ const Product = () => {
     return (
       <div className="container mt-5">
         <div className="row">
-          <h4>Recod Not Found</h4>
+          <h4 style={{'marginTop':50}}>Recod Not Found</h4>
           <div className="col-md-3">
             <div className="card product-details">
               <div className="image-container">

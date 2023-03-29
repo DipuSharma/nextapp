@@ -40,6 +40,7 @@ const Navbar = () => {
         </Link>
       </li>
       <li className="listitem">
+        <i class="fa-solid fa-right-to-bracket" style={{'marginLeft':5, 'marginRight':5}}></i>
         <Link href='/userauth/signup'>SignUp
         </Link>
       </li>
@@ -86,7 +87,9 @@ const Navbar = () => {
       <Script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" />
       <div className="container-fluid">
         <nav className="navbar navbar-expand-lg navbar-light fixed-top">
-          <Link href="/" className="navbar-brand">Navbar</Link>
+          <div className="navbar-home">
+          <Link href="/">Navbar</Link>
+          </div>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
@@ -94,8 +97,8 @@ const Navbar = () => {
             <div className="item">
               <ul className="navbar-nav">
                 <li className="listitem">
-                  <Link href="/">Home 
-                  </Link>
+                  <i class="fa-solid fa-house" style={{'marginRight':5}}></i>
+                  <Link href="/">Home</Link>
                 </li>
                 <li className="listitem">
                   <Link href="/product/product">Product 
