@@ -30,6 +30,7 @@ yarn-error.log*
 .env*.local
 .eslintrc.json
 yarn.lock
+package-lock.json
 
 # vercel
 .vercel
