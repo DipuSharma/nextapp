@@ -1,10 +1,10 @@
 import React from "react";
 import { Card, CardContent, Typography, Button, Grid } from "@mui/material";
 import Image from "next/image";
-import user1 from "../../../assets/images/backgrounds/u2.jpg";
-import user2 from "../../../assets/images/backgrounds/u3.jpg";
-import user3 from "../../../assets/images/backgrounds/u4.jpg";
 
+  let user1 = "../../../assets/images/backgrounds/u2.jpg";
+  let user2 = "../../../assets/images/backgrounds/u3.jpg";
+  let user3 ="../../../assets/images/backgrounds/u4.jpg";
 const blogs = [
   {
     img: user1,
