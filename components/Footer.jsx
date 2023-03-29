@@ -70,7 +70,7 @@ const Footer = () => {
                 </div>
                 {/* style="background-color: rgba(0, 0, 0, 0.2);" */}
                 <div className="container-fluid text-center p-3 copyright">
-                    Copyright© 2021 :
+                    Copyright © 2023 -
                     <span className="copyright-link"><Link className="text-white" href="/"> DipuSharma</Link></span>
                     
                 </div>
