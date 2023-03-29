@@ -7,15 +7,10 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 
-a {
-  color: inherit;
+a{
+  color: white !important;
   text-decoration: none;
 }
-
-* {
-  box-sizing: border-box;
-}
-
 .about-page{
   margin-top: 4rem !important;
 }
